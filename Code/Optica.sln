@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optica.Contracts", "Optica.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optica.WinForms", "Optica.WinForms\Optica.WinForms.csproj", "{0421929C-D8BE-476D-AAAF-0A2D15EB28F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optica.TestApp", "Optica.TestApp\Optica.TestApp.csproj", "{98389306-891B-4A69-89CB-A183301A2AFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0421929C-D8BE-476D-AAAF-0A2D15EB28F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0421929C-D8BE-476D-AAAF-0A2D15EB28F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0421929C-D8BE-476D-AAAF-0A2D15EB28F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98389306-891B-4A69-89CB-A183301A2AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98389306-891B-4A69-89CB-A183301A2AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98389306-891B-4A69-89CB-A183301A2AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98389306-891B-4A69-89CB-A183301A2AFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
