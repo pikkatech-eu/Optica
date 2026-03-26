@@ -1,4 +1,5 @@
-﻿/***********************************************************************************
+﻿using System.ComponentModel;
+/***********************************************************************************
 * File:         PikkaCoreDialog1.cs                                                  *
 * Contents:     Class PikkaCoreDialog1                                               *
 * Author:       Stanislav "Bav" Koncebovski (stanislav@pikkatech.eu)               *
@@ -6,6 +7,7 @@
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
+
 
 namespace Optica.WinForms.Dialogs
 {
@@ -22,6 +24,13 @@ namespace Optica.WinForms.Dialogs
 			{
 				return this._txValue.Text;
 			}
+		}
+
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		internal string ValueLabel
+		{
+			get	{return this._lblValueLabel.Text;}
+			set	{this._lblValueLabel.Text = value;}
 		}
 	}
 }

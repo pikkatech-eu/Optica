@@ -32,7 +32,7 @@
 			this._btOK = new Button();
 			this._btCancel = new Button();
 			this._tlpValueDialog = new TableLayoutPanel();
-			this.label1 = new Label();
+			this._lblValueLabel = new Label();
 			this._txValue = new TextBox();
 			this._tlpValueDialog.SuspendLayout();
 			this.SuspendLayout();
@@ -68,7 +68,7 @@
 			this._tlpValueDialog.ColumnCount = 2;
 			this._tlpValueDialog.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
 			this._tlpValueDialog.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
-			this._tlpValueDialog.Controls.Add(this.label1, 0, 0);
+			this._tlpValueDialog.Controls.Add(this._lblValueLabel, 0, 0);
 			this._tlpValueDialog.Controls.Add(this._txValue, 1, 0);
 			this._tlpValueDialog.Dock = DockStyle.Top;
 			this._tlpValueDialog.Location = new Point(0, 0);
@@ -79,16 +79,16 @@
 			this._tlpValueDialog.Size = new Size(574, 36);
 			this._tlpValueDialog.TabIndex = 1;
 			// 
-			// label1
+			// _lblValueLabel
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Dock = DockStyle.Fill;
-			this.label1.Location = new Point(3, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new Size(137, 36);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Label";
-			this.label1.TextAlign = ContentAlignment.MiddleRight;
+			this._lblValueLabel.AutoSize = true;
+			this._lblValueLabel.Dock = DockStyle.Fill;
+			this._lblValueLabel.Location = new Point(3, 0);
+			this._lblValueLabel.Name = "_lblValueLabel";
+			this._lblValueLabel.Size = new Size(137, 36);
+			this._lblValueLabel.TabIndex = 0;
+			this._lblValueLabel.Text = "Label";
+			this._lblValueLabel.TextAlign = ContentAlignment.MiddleRight;
 			// 
 			// _txValue
 			// 
@@ -124,7 +124,7 @@
 		private Button _btOK;
 		private Button _btCancel;
 		private TableLayoutPanel _tlpValueDialog;
-		private Label label1;
+		private Label _lblValueLabel;
 		private TextBox _txValue;
 	}
 }

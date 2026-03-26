@@ -112,6 +112,8 @@ namespace Optica.WinForms
 		public T GetValue<T>(string title, string label)
 		{
 			CommonValueDialog dialog = new CommonValueDialog();
+			dialog.Text	= title;
+			dialog.ValueLabel = label;
 
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
@@ -123,16 +125,19 @@ namespace Optica.WinForms
 				switch (type)
 				{
 					case Type _ when type == typeof(string):
-						return (T)Convert.ChangeType(stringValue, typeof(T));
-
 					case Type _ when type == typeof(int):
-						return (T)Convert.ChangeType(stringValue, typeof(T));
-
 					case Type _ when type == typeof(double):
-						return (T)Convert.ChangeType(stringValue, typeof(T));
+						try
+						{
+							return (T)Convert.ChangeType(stringValue, typeof(T));
+						}
+						catch (FormatException fe)
+						{
+							throw;
+						}
 
 					default:
-						throw new NotSupportedException("Type not supported");
+						throw new NotSupportedException($"Type {type.Name} is not supported");
 				}
 			}
 			else
