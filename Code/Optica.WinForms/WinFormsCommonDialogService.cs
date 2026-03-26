@@ -127,6 +127,7 @@ namespace Optica.WinForms
 					case Type _ when type == typeof(string):
 					case Type _ when type == typeof(int):
 					case Type _ when type == typeof(double):
+					case Type _ when type == typeof(DateTime):
 						try
 						{
 							return (T)Convert.ChangeType(stringValue, typeof(T));
@@ -143,6 +144,20 @@ namespace Optica.WinForms
 			else
 			{
 				return default(T);
+			}
+		}
+
+		public bool TryGetValue<T>(string title, string label, out T t)
+		{
+			try
+			{
+				t = this.GetValue<T>(title, label);
+				return true;
+			}
+			catch (Exception)
+			{
+				t = default(T);
+				return false;
 			}
 		}
 

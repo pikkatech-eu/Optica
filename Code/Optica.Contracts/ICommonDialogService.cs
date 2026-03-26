@@ -59,6 +59,16 @@ namespace Optica.Contracts
 		/// <exception cref="NotSupportedException">Thrown if the value type is not supported.</exception>
 		T GetValue<T>(string title, string label);
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="title"></param>
+		/// <param name="label"></param>
+		/// <param name="t"></param>
+		/// <returns></returns>
+		bool TryGetValue<T>(string title, string label, out T t);
+
 		EntityRecord GetEntityRecord
 									(
 										EntityRecord entityRecord, 
