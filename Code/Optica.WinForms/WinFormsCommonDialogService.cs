@@ -161,9 +161,30 @@ namespace Optica.WinForms
 			}
 		}
 
-		public EntityRecord GetEntityRecord(EntityRecord entityRecord, string labelTitle = "Title", string labelDescription = "Description")
+		public EntityRecord GetEntityRecord
+											(
+												EntityRecord entityRecord, 
+												string caption			= "Entity Properties", 
+												string labelTitle		= "Title", 
+												string labelDescription = "Description"
+											)
 		{
-			throw new NotImplementedException();
+			EntityDialog dialog		= new EntityDialog();
+
+			dialog.Text				= caption;
+			dialog.TitleLabel		= labelTitle;
+			dialog.DescriptionLabel	= labelDescription;
+			dialog.TitelValue		= entityRecord.Title;
+			dialog.DescriptionValue	= entityRecord.Description;
+
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				return new EntityRecord(dialog.TitelValue, dialog.DescriptionValue);
+			}
+			else
+			{
+				return null;
+			}
 		}
 	}
 }

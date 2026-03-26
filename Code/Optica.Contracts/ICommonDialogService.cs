@@ -72,6 +72,7 @@ namespace Optica.Contracts
 		EntityRecord GetEntityRecord
 									(
 										EntityRecord entityRecord, 
+										string caption = "Entity Properties",
 										string labelTitle="Title", 
 										string labelDescription="Description"
 									);

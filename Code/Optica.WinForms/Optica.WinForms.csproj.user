@@ -4,5 +4,8 @@
     <Compile Update="Dialogs\CommonValueDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dialogs\EntityDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
