@@ -74,7 +74,37 @@ namespace Optica.WinForms
 
 		public string GetFileName(FileDialogOptions options)
 		{
-			throw new NotImplementedException();
+			switch (options.FileDialogKind)
+			{
+				case FileDialogKind.Save:
+					SaveFileDialog sfd = new SaveFileDialog();
+					sfd.Filter = options.Filter;
+
+					if (sfd.ShowDialog() == DialogResult.OK)
+					{
+						return sfd.FileName;
+					}
+					else
+					{
+						return null;
+					}
+
+				case FileDialogKind.Load:
+					OpenFileDialog ofd = new OpenFileDialog();
+					ofd.Filter = options.Filter;
+
+					if (ofd.ShowDialog() == DialogResult.OK)
+					{
+						return ofd.FileName;
+					}
+					else
+					{
+						return null;
+					}
+
+				default:
+					return null;
+			}
 		}
 
 		public T GetValue<T>(string title, string label)
