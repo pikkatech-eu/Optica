@@ -11,12 +11,22 @@ using Optica.Contracts.Enumerations;
 
 namespace Optica.Contracts
 {
+	/// <summary>
+	/// Format for the exchange with GetEntityRecord service.
+	/// A string entity includes two components: Title and description.
+	/// This pattern repeats in many collections.
+	/// </summary>
+	/// <param name="Title">The title of the entity.</param>
+	/// <param name="Description">Thr description of the entity.</param>
 	public record EntityRecord(string Title, string Description);
 
+	/// <summary>
+	/// Defines services occurring in common patterns.
+	/// </summary>
 	public interface ICommonDialogService
 	{
 		/// <summary>
-		/// Shows a messageBox with given parameters and returns its return value.
+		/// Shows a MessageBox with given parameters and returns its return value.
 		/// </summary>
 		/// <param name="title">The title of the message box.</param>
 		/// <param name="message">The message text.</param>
@@ -38,7 +48,7 @@ namespace Optica.Contracts
 		/// Shows a FileDialog to select the file namr for load or save.
 		/// </summary>
 		/// <param name="options">The options.</param>
-		/// <returns></returns>
+		/// <returns>The file name, if successful, otherwise null.</returns>
 		string GetFileName(FileDialogOptions options);
 
 		/// <summary>
@@ -60,15 +70,24 @@ namespace Optica.Contracts
 		T GetValue<T>(string title, string label);
 
 		/// <summary>
-		/// 
+		/// Tries to get a value of supported type from a simple value dialog.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="title"></param>
-		/// <param name="label"></param>
-		/// <param name="t"></param>
-		/// <returns></returns>
+		/// <typeparam name="T">Type of input value.</typeparam>
+		/// <param name="title">Dialog's Title.</param>
+		/// <param name="label">The label at thr value field.</param>
+		/// <param name="t">Resulting value supplied by dialog, if successful.</param>
+		/// <returns>True, if the action was successful.</returns>
 		bool TryGetValue<T>(string title, string label, out T t);
 
+		/// <summary>
+		/// Shows EntityRecord dialog, sers initial values on an EntityRecord
+		/// and returns the EntityRecord as set / edited by user.
+		/// </summary>
+		/// <param name="entityRecord">Initial value of EntityRecord.</param>
+		/// <param name="caption">The caption of the dislog.</param>
+		/// <param name="labelTitle">The title label.</param>
+		/// <param name="labelDescription">The decsription label.</param>
+		/// <returns>The resulting value of EntityRecord.</returns>
 		EntityRecord GetEntityRecord
 									(
 										EntityRecord entityRecord, 
