@@ -9,6 +9,7 @@
 
 using Optica.Contracts;
 using Optica.Contracts.Enumerations;
+using Optica.WinForms.Dialogs;
 
 namespace Optica.WinForms
 {
@@ -107,9 +108,37 @@ namespace Optica.WinForms
 			}
 		}
 
+
 		public T GetValue<T>(string title, string label)
 		{
-			throw new NotImplementedException();
+			CommonValueDialog dialog = new CommonValueDialog();
+
+			if (dialog.ShowDialog() == DialogResult.OK)
+			{
+				string stringValue = dialog.StringValue;
+
+				Type type = typeof(T);
+				object result;
+
+				switch (type)
+				{
+					case Type _ when type == typeof(string):
+						return (T)Convert.ChangeType(stringValue, typeof(T));
+
+					case Type _ when type == typeof(int):
+						return (T)Convert.ChangeType(stringValue, typeof(T));
+
+					case Type _ when type == typeof(double):
+						return (T)Convert.ChangeType(stringValue, typeof(T));
+
+					default:
+						throw new NotSupportedException("Type not supported");
+				}
+			}
+			else
+			{
+				return default(T);
+			}
 		}
 
 		public EntityRecord GetEntityRecord(EntityRecord entityRecord, string labelTitle = "Title", string labelDescription = "Description")
