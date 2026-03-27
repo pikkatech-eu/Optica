@@ -8,11 +8,27 @@ namespace Optica.TestApp
 	{
 		internal ICommonDialogService _commonDialogService;
 
-		public OpticaTestForm(ICommonDialogService dialogService)
+		internal IListViewService<Location> _listViewService;
+
+		public List<Location> Locations = new List<Location>();
+
+		public OpticaTestForm(ICommonDialogService dialogService, IListViewService<Location> listViewService)
 		{
 			InitializeComponent();
 
-			this._commonDialogService = dialogService;
+			this._commonDialogService				= dialogService;
+
+			this._listViewService					= listViewService;
+			this._listViewService.Mapper			= (Location loc) => {return [loc.Name, loc.Latitude.ToString(), loc.Longitude.ToString()]; };
+			
+			// Cludge?
+			this._listViewService.ListViewControl	= this._lvLocations;
+
+			this.Locations.Add(new Location{Name="Potsdam", Latitude=52.4, Longitude=13.06});
+			this.Locations.Add(new Location{Name="Haifa", Latitude=32.8, Longitude=34.98});
+
+			
+			this._listViewService.Display(this.Locations);
 		}
 
 		private void OnSimpleMessageBox(object sender, EventArgs e)

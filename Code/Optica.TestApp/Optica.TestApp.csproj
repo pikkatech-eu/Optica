@@ -19,10 +19,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Location.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <PackageReference Include="Lorem.Universal.NET" Version="5.0.0" />
 	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
 	</ItemGroup>

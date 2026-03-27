@@ -18,10 +18,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="WinFormsListViewService.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\Optica.Contracts\Optica.Contracts.csproj" />
 	</ItemGroup>
 	

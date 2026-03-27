@@ -42,6 +42,9 @@
 			this.dateTimeToolStripMenuItem = new ToolStripMenuItem();
 			this.entityDialogToolStripMenuItem = new ToolStripMenuItem();
 			this._lvLocations = new ListView();
+			this.LocationName = new ColumnHeader();
+			this.Latituide = new ColumnHeader();
+			this.Longituide = new ColumnHeader();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -141,12 +144,26 @@
 			// 
 			// _lvLocations
 			// 
+			this._lvLocations.Columns.AddRange(new ColumnHeader[] { this.LocationName, this.Latituide, this.Longituide });
 			this._lvLocations.Dock = DockStyle.Left;
 			this._lvLocations.Location = new Point(0, 28);
 			this._lvLocations.Name = "_lvLocations";
 			this._lvLocations.Size = new Size(291, 671);
 			this._lvLocations.TabIndex = 1;
 			this._lvLocations.UseCompatibleStateImageBehavior = false;
+			this._lvLocations.View = View.Details;
+			// 
+			// LocationName
+			// 
+			this.LocationName.Text = "Name";
+			// 
+			// Latituide
+			// 
+			this.Latituide.Text = "Latituide";
+			// 
+			// Longituide
+			// 
+			this.Longituide.Text = "Longituide";
 			// 
 			// OpticaTestForm
 			// 
@@ -180,5 +197,8 @@
 		private ToolStripMenuItem dateTimeToolStripMenuItem;
 		private ToolStripMenuItem entityDialogToolStripMenuItem;
 		private ListView _lvLocations;
+		private ColumnHeader LocationName;
+		private ColumnHeader Latituide;
+		private ColumnHeader Longituide;
 	}
 }
