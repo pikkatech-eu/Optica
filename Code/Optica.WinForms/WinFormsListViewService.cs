@@ -13,38 +13,38 @@ namespace Optica.WinForms
 {
 	public class WinFormsListViewService<T> : IListViewService<T>
 	{
-		// Cludge?
-		public object ListViewControl	{get;set;}
+		private readonly  ListView  _listView;
 
 		public Func<T, string[]> Mapper	{get;set;}
 
+		public WinFormsListViewService(ListView listView)
+		{
+			this._listView = listView;
+		}
+
 		public void Display(IEnumerable<T> items)
 		{
-			ListView listView = (ListView)this.ListViewControl;
-
-			listView.Items.Clear();
+			this._listView.Items.Clear();
 
 			foreach (T item in items)
 			{
 				ListViewItem lvi	= new ListViewItem(this.Mapper(item));
 				lvi.Tag				= item;
 
-				listView.Items.Add(lvi);
+				this._listView.Items.Add(lvi);
 			}
 
-			listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-			listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+			this._listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+			this._listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
 		}
 
 		public T SelectedItem
 		{
 			get
 			{
-				ListView listView = (ListView)this.ListViewControl;
-
-				if (listView.SelectedItems.Count == 1)
+				if (this._listView.SelectedItems.Count == 1)
 				{
-					return (T)listView.SelectedItems[0].Tag;
+					return (T)this._listView.SelectedItems[0].Tag;
 				}
 				else
 				{

@@ -14,8 +14,5 @@ namespace Optica.Contracts
 		Func<T, string[]> Mapper	{get;set;}
 		void Display(IEnumerable<T> items);
 		T SelectedItem	{get;set;}
-
-		// Cludge?
-		object ListViewControl	{get;set;}
 	}
 }

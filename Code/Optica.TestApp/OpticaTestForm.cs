@@ -1,6 +1,7 @@
 using LoremNET;
 using Optica.Contracts;
 using Optica.Contracts.Enumerations;
+using Optica.WinForms;
 
 namespace Optica.TestApp
 {
@@ -12,17 +13,15 @@ namespace Optica.TestApp
 
 		public List<Location> Locations = new List<Location>();
 
-		public OpticaTestForm(ICommonDialogService dialogService, IListViewService<Location> listViewService)
+		public OpticaTestForm(ICommonDialogService dialogService)
 		{
 			InitializeComponent();
 
 			this._commonDialogService				= dialogService;
 
-			this._listViewService					= listViewService;
+			this._listViewService					= new WinFormsListViewService<Location>(this._lvLocations);
 			this._listViewService.Mapper			= (Location loc) => {return [loc.Name, loc.Latitude.ToString(), loc.Longitude.ToString()]; };
 			
-			// Cludge?
-			this._listViewService.ListViewControl	= this._lvLocations;
 
 			this.Locations.Add(new Location{Name="Potsdam", Latitude=52.4, Longitude=13.06});
 			this.Locations.Add(new Location{Name="Haifa", Latitude=32.8, Longitude=34.98});
