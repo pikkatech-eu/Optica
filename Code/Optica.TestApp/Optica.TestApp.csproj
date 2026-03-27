@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
 		<TargetFramework>net9.0-windows</TargetFramework>
 		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>
@@ -8,7 +9,7 @@
 		<BaseOutputPath>C:\pikkatech.eu\Projects\Root\Optica\Code\Binary</BaseOutputPath>
 		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
 	</PropertyGroup>
-
+	
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<NoWarn>1701;1702;CS0168;CS0414;CS8600;CS8602;CS8603;CS8604;CS8605;CS8618;CS8625;CS8629;CS8714;IDE0028;IDE0090</NoWarn>
 	</PropertyGroup>
@@ -18,11 +19,17 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="WinFormsListViewService.cs" />
+	  <Compile Remove="Location.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Lorem.Universal.NET" Version="5.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Optica.Contracts\Optica.Contracts.csproj" />
+	  <ProjectReference Include="..\Optica.WinForms\Optica.WinForms.csproj" />
 	</ItemGroup>
 	
 	
