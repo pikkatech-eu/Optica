@@ -6,6 +6,7 @@
 		<Nullable>enable</Nullable>
 		<BaseOutputPath>C:\pikkatech.eu\Projects\Root\Optica\Code\Binary</BaseOutputPath>
 		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<Version>1.0.0.0</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
