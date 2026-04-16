@@ -222,8 +222,8 @@ namespace Optica.WinForms
 			dialog.Text				= caption;
 			dialog.TitleLabel		= labelTitle;
 			dialog.DescriptionLabel	= labelDescription;
-			dialog.TitelValue		= entityRecord.Title;
-			dialog.DescriptionValue	= entityRecord.Description;
+			dialog.TitelValue		= entityRecord?.Title??"";
+			dialog.DescriptionValue	= entityRecord?.Description??"";
 
 			if (dialog.ShowDialog() == DialogResult.OK)
 			{
