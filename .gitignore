@@ -1,0 +1,6 @@
+*.dtbcache.v2
+*.suo
+*.v2
+*.vsidx
+*.bin
+*.dll
