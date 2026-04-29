@@ -1,4 +1,4 @@
-﻿namespace Optica.WinForms.Dialogs
+﻿namespace Opica.WinForms.Dialogs
 {
 	partial class EntityDialog
 	{

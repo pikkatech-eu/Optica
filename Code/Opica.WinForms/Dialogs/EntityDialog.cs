@@ -9,7 +9,7 @@
 
 using System.ComponentModel;
 
-namespace Optica.WinForms.Dialogs
+namespace Opica.WinForms.Dialogs
 {
 	public partial class EntityDialog : Form
 	{

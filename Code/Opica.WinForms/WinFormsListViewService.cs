@@ -7,9 +7,9 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using Optica.Contracts;
+using Opica.Contracts;
 
-namespace Optica.WinForms
+namespace Opica.WinForms
 {
 	public class WinFormsListViewService<T> : IListViewService<T>
 	{

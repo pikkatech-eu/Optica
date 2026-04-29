@@ -1,20 +1,17 @@
 ﻿/***********************************************************************************
-* File:         MessageDialogIcons.cs                                              *
-* Contents:     Enum MessageDialogIcons                                            *
+* File:         FileDialogKind.cs                                                  *
+* Contents:     Enum DialogKind                                                    *
 * Author:       Stanislav "Bav" Koncebovski (stanislav@pikkatech.eu)               *
-* Date:         2026-03-26 09:45                                                   *
+* Date:         2026-03-26 10:03                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-namespace Optica.Contracts.Enumerations
+namespace Opica.Contracts.Enumerations
 {
-	public enum MessageDialogIcons
+	public enum FileDialogKind
 	{
-		Error,
-		Warning,
-		Question,
-		Information,
-		None
+		Load,
+		Save
 	}
 }

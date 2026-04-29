@@ -1,18 +1,20 @@
 ﻿/***********************************************************************************
-* File:         IListViewService.cs                                                *
-* Contents:     Interface IListViewService                                         *
+* File:         MessageDialogIcons.cs                                              *
+* Contents:     Enum MessageDialogIcons                                            *
 * Author:       Stanislav "Bav" Koncebovski (stanislav@pikkatech.eu)               *
-* Date:         2026-03-26 19:28                                                   *
+* Date:         2026-03-26 09:45                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-namespace Optica.Contracts
+namespace Opica.Contracts.Enumerations
 {
-	public interface IListViewService<T>
+	public enum MessageDialogIcons
 	{
-		Func<T, string[]> Mapper	{get;set;}
-		void Display(IEnumerable<T> items);
-		T SelectedItem	{get;set;}
+		Error,
+		Warning,
+		Question,
+		Information,
+		None
 	}
 }

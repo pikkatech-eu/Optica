@@ -9,7 +9,7 @@
 ***********************************************************************************/
 
 
-namespace Optica.WinForms.Dialogs
+namespace Opica.WinForms.Dialogs
 {
 	public partial class CommonValueDialog : Form
 	{

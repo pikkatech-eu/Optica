@@ -7,9 +7,9 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using Optica.Contracts.Enumerations;
+using Opica.Contracts.Enumerations;
 
-namespace Optica.Contracts
+namespace Opica.Contracts
 {
 	/// <summary>
 	/// Format for the exchange with GetEntityRecord service.

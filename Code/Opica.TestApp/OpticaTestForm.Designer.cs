@@ -1,6 +1,6 @@
-﻿namespace Optica.TestApp
+﻿namespace Opica.TestApp
 {
-	partial class OpticaTestForm
+	partial class OpicaTestForm
 	{
 		/// <summary>
 		///  Required designer variable.
@@ -165,7 +165,7 @@
 			// 
 			this.Longituide.Text = "Longituide";
 			// 
-			// OpticaTestForm
+			// OpicaTestForm
 			// 
 			this.AutoScaleDimensions = new SizeF(8F, 20F);
 			this.AutoScaleMode = AutoScaleMode.Font;
@@ -173,8 +173,8 @@
 			this.Controls.Add(this._lvLocations);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
-			this.Name = "OpticaTestForm";
-			this.Text = "Optica tests";
+			this.Name = "OpicaTestForm";
+			this.Text = "Opica tests";
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);

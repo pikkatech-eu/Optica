@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11709.299
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opica.Contracts", "Opica.Contracts\Opica.Contracts.csproj", "{40C81F01-89E1-287E-4C37-EA4A6667E572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opica.WinForms", "Opica.WinForms\Opica.WinForms.csproj", "{9067C366-6E01-876C-1488-5D9DEF62B1B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opica.TestApp", "Opica.TestApp\Opica.TestApp.csproj", "{A2EA57AC-564B-086B-ED6E-B6D6541137CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40C81F01-89E1-287E-4C37-EA4A6667E572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C81F01-89E1-287E-4C37-EA4A6667E572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C81F01-89E1-287E-4C37-EA4A6667E572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C81F01-89E1-287E-4C37-EA4A6667E572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9067C366-6E01-876C-1488-5D9DEF62B1B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9067C366-6E01-876C-1488-5D9DEF62B1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9067C366-6E01-876C-1488-5D9DEF62B1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9067C366-6E01-876C-1488-5D9DEF62B1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2EA57AC-564B-086B-ED6E-B6D6541137CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2EA57AC-564B-086B-ED6E-B6D6541137CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2EA57AC-564B-086B-ED6E-B6D6541137CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2EA57AC-564B-086B-ED6E-B6D6541137CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {442DF1A9-BCEA-4238-BC79-018FCB904A1E}
+	EndGlobalSection
+EndGlobal

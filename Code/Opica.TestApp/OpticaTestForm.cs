@@ -1,11 +1,11 @@
 using LoremNET;
-using Optica.Contracts;
-using Optica.Contracts.Enumerations;
-using Optica.WinForms;
+using Opica.Contracts;
+using Opica.Contracts.Enumerations;
+using Opica.WinForms;
 
-namespace Optica.TestApp
+namespace Opica.TestApp
 {
-	public partial class OpticaTestForm : Form
+	public partial class OpicaTestForm : Form
 	{
 		internal ICommonDialogService _commonDialogService;
 
@@ -13,7 +13,7 @@ namespace Optica.TestApp
 
 		public List<Location> Locations = new List<Location>();
 
-		public OpticaTestForm(ICommonDialogService dialogService)
+		public OpicaTestForm(ICommonDialogService dialogService)
 		{
 			InitializeComponent();
 

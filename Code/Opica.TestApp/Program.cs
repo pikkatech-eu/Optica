@@ -1,8 +1,8 @@
 using Microsoft.Extensions.DependencyInjection;
-using Optica.Contracts;
-using Optica.WinForms;
+using Opica.Contracts;
+using Opica.WinForms;
 
-namespace Optica.TestApp
+namespace Opica.TestApp
 {
 	internal static class Program
 	{
@@ -23,9 +23,9 @@ namespace Optica.TestApp
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
 
-			OpticaTestForm opticaTestForm = new OpticaTestForm(dialogService);
+			OpicaTestForm OpicaTestForm = new OpicaTestForm(dialogService);
 
-			Application.Run(opticaTestForm);
+			Application.Run(OpicaTestForm);
 		}
 	}
 }

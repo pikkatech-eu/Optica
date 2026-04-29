@@ -7,11 +7,11 @@
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-using Optica.Contracts;
-using Optica.Contracts.Enumerations;
-using Optica.WinForms.Dialogs;
+using Opica.Contracts;
+using Opica.Contracts.Enumerations;
+using Opica.WinForms.Dialogs;
 
-namespace Optica.WinForms
+namespace Opica.WinForms
 {
 	public class WinFormsCommonDialogService : ICommonDialogService
 	{

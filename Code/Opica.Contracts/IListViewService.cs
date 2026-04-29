@@ -1,17 +1,18 @@
 ﻿/***********************************************************************************
-* File:         FileDialogKind.cs                                                  *
-* Contents:     Enum DialogKind                                                    *
+* File:         IListViewService.cs                                                *
+* Contents:     Interface IListViewService                                         *
 * Author:       Stanislav "Bav" Koncebovski (stanislav@pikkatech.eu)               *
-* Date:         2026-03-26 10:03                                                   *
+* Date:         2026-03-26 19:28                                                   *
 * Version:      1.0                                                                *
 * Copyright:    pikkatech.eu (www.pikkatech.eu)                                    *
 ***********************************************************************************/
 
-namespace Optica.Contracts.Enumerations
+namespace Opica.Contracts
 {
-	public enum FileDialogKind
+	public interface IListViewService<T>
 	{
-		Load,
-		Save
+		Func<T, string[]> Mapper	{get;set;}
+		void Display(IEnumerable<T> items);
+		T SelectedItem	{get;set;}
 	}
 }
