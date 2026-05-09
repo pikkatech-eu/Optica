@@ -50,19 +50,6 @@ namespace Opica.WinForms
 					Clipboard.SetDataObject(data);
 					break;
 			}
-
-			//if (value is string s)
-			//{
-			//	Clipboard.SetText(s);
-			//}
-			//else
-			//{
-			//	var json = JsonSerializer.Serialize(value);
-			//	var data = new DataObject();
-
-			//	data.SetData(FormatName<T>(), json);
-			//	Clipboard.SetDataObject(data);
-			//}
 		}
 
 		/// <summary>
@@ -72,29 +59,41 @@ namespace Opica.WinForms
 		/// <returns>The value of the object, if successful, otherwise null.</returns>
 		public T? Get<T>()
 		{
+			Type type = typeof(T);
+
 			try
 			{
-				if (typeof(T) == typeof(string))
+				switch (type)
 				{
-					return (T)(object)Clipboard.GetText();
+					case Type _ when type == typeof(string):
+						return (T)(object)Clipboard.GetText();
+
+					case Type _ when type == typeof(double):
+						return (T)(object)double.Parse(Clipboard.GetText(), CultureInfo.InvariantCulture);
+
+					case Type _ when type == typeof(DateTime):
+						return (T)(object)DateTime.Parse(Clipboard.GetText(), CultureInfo.InvariantCulture);
+
+					default:
+						var data = Clipboard.GetDataObject();
+
+						if (data == null)
+						{
+							return default;
+						}
+
+						string format = FormatName<T>();
+
+						if (data.GetDataPresent(format))
+						{
+							string json = (string)data.GetData(format);
+							return JsonSerializer.Deserialize<T>(json);
+						}
+						else
+						{
+							return default(T);
+						}
 				}
-
-				var data = Clipboard.GetDataObject();
-
-				if (data == null)
-				{
-					return default;
-				}
-
-				string format = FormatName<T>();
-
-				if (data.GetDataPresent(format))
-				{
-					string json = (string)data.GetData(format);
-					return JsonSerializer.Deserialize<T>(json);
-				}
-
-				return default;
 			}
 			catch
 			{
