@@ -8,6 +8,7 @@
 ***********************************************************************************/
 
 using Opica.Contracts;
+using System.Globalization;
 using System.Text.Json;
 
 namespace Opica.WinForms
@@ -28,18 +29,40 @@ namespace Opica.WinForms
 		/// <param name="value">Object to set</param>
 		public void Set<T>(T value)
 		{
-			if (value is string s)
+			switch (value)
 			{
-				Clipboard.SetText(s);
-			}
-			else
-			{
-				var json = JsonSerializer.Serialize(value);
-				var data = new DataObject();
+				case string s:
+					Clipboard.SetText(s);
+					break;
 
-				data.SetData(FormatName<T>(), json);
-				Clipboard.SetDataObject(data);
+				case double d:
+					Clipboard.SetText(d.ToString(CultureInfo.InvariantCulture));
+					break;
+
+				case DateTime dt:
+					Clipboard.SetText(dt.ToString("O")); // ISO 8601 round-trip format
+					break;
+
+				default:
+					var json = JsonSerializer.Serialize(value);
+					var data = new DataObject();
+					data.SetData(FormatName<T>(), json);
+					Clipboard.SetDataObject(data);
+					break;
 			}
+
+			//if (value is string s)
+			//{
+			//	Clipboard.SetText(s);
+			//}
+			//else
+			//{
+			//	var json = JsonSerializer.Serialize(value);
+			//	var data = new DataObject();
+
+			//	data.SetData(FormatName<T>(), json);
+			//	Clipboard.SetDataObject(data);
+			//}
 		}
 
 		/// <summary>
